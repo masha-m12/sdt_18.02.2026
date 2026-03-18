@@ -1,0 +1,81 @@
+# Qt Creator user files
+*.pro.user
+*.pro.user.*
+*.creator.user
+*.creator.user.*
+*.autosave
+*.qtc_clangd
+*.qtc_clangd/*
+.qtc_clangd/
+.qtcreator/
+
+# Build directories
+build/
+build-*/
+*-build-*
+Debug/
+Release/
+*.build
+*.build/*
+*.debug
+*.release
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.dll.a
+*.app
+*.dmg
+
+# Qt specific
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
+*.qrc.depends
+*.moc.o
+*.qrc.depends
+*.moc.o
+*.qrc.depends
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.cache
+*.lock
+*.user
+*.user.*
+
+# IDE directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# CMake specific (если используете CMake)
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+*.cmake
+!_deps/
+build-*-cmake
+
+# QMake specific (если используете QMake)
+Makefile*
+*.make
+*.mk
+object_script.*.Release
+object_script.*.Debug
+*.qml
