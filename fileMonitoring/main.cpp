@@ -1,6 +1,9 @@
 #include <QCoreApplication>
 #include <QFileInfo>
 
+#include "fileManager.h"
+#include "logger.h"
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
