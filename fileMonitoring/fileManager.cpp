@@ -52,3 +52,46 @@ void fileManager::remove(const QString& path)
         }
     }
 }
+
+void fileManager::checkFiles()
+{
+    for (int i = 0; i < files.size(); ++i)
+    {
+        QFileInfo info(files[i].path);
+
+        bool currentExists = false;
+        qint64 currentSize = 0;
+
+        if (info.exists() && info.isFile())
+        {
+            currentExists = true;
+            currentSize = info.size();
+        }
+        else
+        {
+            currentExists = false;
+            currentSize = 0;
+        }
+
+        if (!files[i].exists && currentExists)
+        {
+            emit created(files[i].path, currentSize);
+        }
+
+        else if (files[i].exists && !currentExists)
+        {
+            emit deleted(files[i].path);
+        }
+
+        else if (files[i].exists && currentExists)
+        {
+            if (files[i].size != currentSize)
+            {
+                emit changed(files[i].path, currentSize);
+            }
+        }
+
+        files[i].exists = currentExists;
+        files[i].size = currentSize;
+    }
+}

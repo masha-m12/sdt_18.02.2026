@@ -23,6 +23,9 @@ signals:
     void deleted(const QString& name);
     void changed(const QString& name, qint64 size);
 
+private slots:
+    void checkFiles();
+
 private:
     struct fileState {
         QString path;
@@ -33,6 +36,7 @@ private:
     };
 
     QList<fileState> files;
+    QTimer timer;
 };
 
 #endif // FILEMANAGER_H
