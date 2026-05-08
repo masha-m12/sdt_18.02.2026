@@ -5,7 +5,9 @@
 fileManager::fileManager(QObject *parent)
     : QObject(parent)
 {
-
+    timer.setInterval(100);
+    connect(&timer, &QTimer::timeout, this, &fileManager::checkFiles);
+    timer.start();
 }
 
 fileManager::~fileManager() {

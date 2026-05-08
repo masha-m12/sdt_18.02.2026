@@ -14,6 +14,9 @@ public:
 public slots:
     void onExist(const QString& name, qint64 size);
     void onNotExist(const QString& name);
+    void onCreated(const QString& name, qint64 size);
+    void onDeleted(const QString& name);
+    void onChanged(const QString& name, qint64 size);
 };
 
 #endif // LOGGER_H
